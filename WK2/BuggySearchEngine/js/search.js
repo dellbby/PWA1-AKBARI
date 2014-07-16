@@ -8,7 +8,7 @@
 	;
 	
 	// Validates search query
-	var validate = function(query){ 
+	var validate = function(query){  //fixed spelling for validate
 	//^^assign anonymous function to variable validate
 		
 		// Trim whitespace from start and end of search query
@@ -33,7 +33,7 @@
 	var search = function(query){ //does function query
 		
 		
-		var queryArray = query.split(" "); 
+		var queryArray = query.split(" ");  //changed join to "split"
 		// split the user's search query string into an array
 		
 		
