@@ -12,7 +12,7 @@
 	//^^assign anonymous function to variable validate
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) === " "){ 
+		while(query.charAt(0) === " "){  //made === instead of =
 			query = query.substring(1, query.length); //loop as long as test condition is true
 		};
 		while(query.charAt(query.length-1) === ""){
