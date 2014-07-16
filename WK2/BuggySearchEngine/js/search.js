@@ -17,7 +17,7 @@
 		};
 		while(query.charAt(query.length-1) === ""){
 			query = query.substring(0, query.length-1); //loop as long as test condition is true
-		};
+		};//close return
 		
 		if(query.length < 3){ //if search query is less than 3 characters, prompts to search again
 			alert("Your search query is too small, try again."); //alert for 3 characters
@@ -25,10 +25,10 @@
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
 			searchInput.focus(); 
 			return; //returns search input by user
-		};
+		}; //close
 		
 		search(query); //searches query
-	};
+	}; //close
 	
 	var search = function(query){ //does function query
 		
@@ -56,7 +56,7 @@
 				var compare = dbitem.indexOf(qitem);
 				if(compare !== -1){ 
 					results.push(db[i]); //if match is found full database goes to array  
-				};
+				}; 
 			};
 		};
 		
@@ -113,6 +113,6 @@
         // return false is needed for most events - this will be reviewed in upcoming course material
         // THE LINE DIRECTLY BELOW IS CORRECT
 		return false; //return function with no results
-	};
+	}; //close return
 
 })();
