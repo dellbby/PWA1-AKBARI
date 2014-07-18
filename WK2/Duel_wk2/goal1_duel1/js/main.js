@@ -9,11 +9,12 @@
 (function(){ //starts a function to begin fight
 
     console.log("FIGHT!!!"); // Consoling that Fight begins
-	var kabal=fighter1(name, damage, health);
-	var kratos=fighter2(name, damage, health);
+	var kabal = ["Kabal", 20,100];//Player one's name is Kabal, damage is 20, health starts at 100
+	var kratos = ["kratos", 20,100];//Player two's name is Kratos, damage is 20, health starts at 100
+	
+
     //player name
-	var fighter1 = ["Kabal", 20,100];//Player one's name is Kabal, damage is 20, health starts at 100
-	var fighter2 = ["kratos", 20,100];//Player two's name is Kratos, damage is 20, health starts at 100
+	
 	
 
     //initiate round
@@ -21,7 +22,7 @@
 	
 
     function fight(){ //starts fight function
-        alert(kabal[0]+":"+kabal[2]+"  *START*  "+fighter2[0]+":"+fighter2[2]); //alerts to start game with beginning of players health
+        alert(kabal[0]+":"+kabal[2]+"  *START*  "+kratos[0]+":"+kratos[2]); //alerts to start game with beginning of players health
         for (var i = 0; i < 10; i++) 	//if i is less than 10 -rounds- then it executes the code below. this is a loop
         {
             //random formula is - Math.floor(Math.random() * (max - min) + min); //formula for random number
