@@ -26,7 +26,7 @@
         {
             //random formula is - Math.floor(Math.random() * (max - min) + min); //formula for random number
             var minDamage1 = kabal[1] * .5; //multiplies the damage
-            var minDamage2 = fighter2[1] * .5; //multiplies the damage
+            var minDamage2 = kratos[1] * .5; //multiplies the damage
             var f1 = Math.floor(Math.random()*(kabal[1]-minDamage1)+minDamage1); //formula for random number
             var f2 = Math.floor(Math.random()*(kratos[1]-minDamage2)+minDamage2); //formula for random number
 
