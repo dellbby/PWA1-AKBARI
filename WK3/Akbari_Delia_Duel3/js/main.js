@@ -32,7 +32,7 @@ Assignment: Duel pt 3
 		damage:20, //damage is 20
 		health:100 //health starts at 100
 	}];
-	var round = 1;
+	var round=0; 
 	
 	//INITIALIZE DOM
 	round_txt.innerHTML = "Click FIGHT button to start";
@@ -64,7 +64,7 @@ Assignment: Duel pt 3
 				fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
 				fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
 				
-			}else{
+			} else{
 				fighter1_txt.innerHTML = result;
 				fighter2_txt.innerHTML = "";
 				
@@ -83,7 +83,7 @@ Assignment: Duel pt 3
 				result = "You both die - Game OVER";
 			} else if(fighters[0].health < 1){
 				result = fighters[1].name + "Wins!!!"
-			}else if (fighters[1].health <1 )
+			} else if (fighters[1].health < 1)
 			{
 				result = fighters[0].name + "WINS!"
 			}
