@@ -46,55 +46,47 @@ Assignment: Duel pt 3
 			//damage
 			var f1 = Math.floor(Math.random() * fighters[0].damage + fighters[0].damage *.5);
 			var f2 = Math.floor(Math.random() * fighters[1].damage + fighters[1].damage *.5);
-	
-
-
-        alert(kabal[0]+":"+kabal[2]+"  *START*  "+kratos[0]+":"+kratos[2]); //alerts to start game with beginning of players health
-        for (var i = 0; i < 10; i++) 	//if i is less than 10 -rounds- then it executes the code below. this is a loop
-        {
-            //random formula is - Math.floor(Math.random() * (max - min) + min); //formula for random number
-            var minDamage1 = kabal[1] * .5; //multiplies the damage
-            var minDamage2 = kratos[1] * .5; //multiplies the damage
-            var f1 = Math.floor(Math.random()*(kabal[1]-minDamage1)+minDamage1); //formula for random number
-            var f2 = Math.floor(Math.random()*(kratos[1]-minDamage2)+minDamage2); //formula for random number
-
-            //inflict damage
-            kabal[2]-=f1; //minuses damage
-            kratos[2]-=f2; //minuses damage
-
-            console.log(kabal[0]+": "+kabal[2] + " " + kratos[0]+":"+kratos[2]); //Console logs players names and healths each round
-
-            //check for victor
-            var result = winnerCheck(); //checks to see if there is a winner
-            console.log(result); //console logs the result
-            if (result==="no winner") //if there is no winner then..
-            {
-                round++; //increase round variable by 1, adds 1 to round
-                alert(kabal[0]+":"+kabal[2]+"  *ROUND "+round+" OVER"+"*  "+kratos[0]+":"+kratos[2]); //Shows round number and saying that it is over with player health
-
-            } else{ //if winner or both players lose..
-                alert(result); //one of players wins or both of them die. shows result
-                break;   //breaks out of loop to display outcome
-            };
-
-          };
-    };
-
-    function winnerCheck(){ 			//checks to see if there is a winner or not
-        var result="no winner";                //if no winner, it displays "no winner"
-        if (kabal[2]<1 && kratos[2]<1) //if players health is lower than 1, there is no winner
-        {
-            result = "You Both Die";           //Alerts that both players are dead if both health is lower than 1
-        } else if(kabal[2]<1){          //If player 1's heath is lower than 1, player 2 wins
-            result =kratos[0]+" WINS!!!"   //result that player two wins
-        } else if (kratos[2]<1)         //if player 2's health is lower than 1, player 1 wins the game
-        {
-            result = kabal[0]+" WINS!!!" //player one wins the game 
-        };
-       return result;
-    };
-
-    /*******  The program gets started below *******/
-    fight(); //this is where the program begins, runs above code
-
+			
+			//inflict damage
+			fighters[0].health -= f1;
+			fighters[1].health -= f2;
+			
+			console.log(fighters[0].health, fighters[1].health);
+			
+			//winner?
+			var result=winnerCheck ();
+			console.log (result); //will display if winner
+			
+			round_txt.innerHTML = "ROUND #" + round+ "Results:";
+			rount++;
+			if (result === "no winner")
+			{
+				fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
+				fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
+				
+			}else{
+				fighter1_txt.innerHTML = result;
+				fighter2_txt.innerHTML = "";
+				
+				//disable button - need below if using addevent listener
+				button.removeEventListener("click",fight, false);
+				//button disables = true;
+				//button.onclick = return false";
+				
+				document.querySelector('.buttonblue').innerHTML = 'DONE!!';
+			}
+		}
+		function winnerCheck() {
+			var result = "no winner";
+			if (fighters[0].health < 1 && fighters[1].health <1)
+			{
+				result = "You both die - Game OVER";
+			} else if(fighters[0].health < 1){
+				result = fighters[1].name + "Wins!!!"
+			}else if (fighters[1].health <1 )
+			{
+				result = fighters[0].name + "WINS!"
+			}
+			return result;
+		}
 })();
