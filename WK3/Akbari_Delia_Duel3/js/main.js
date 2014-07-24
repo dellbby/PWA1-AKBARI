@@ -18,7 +18,7 @@ Assignment: Duel pt 3
 	console.log()
 	
 	//SETUP Click event
-	button.addEventListener("click", fight,false); //need event listener
+	button.addEventListener("click", fight, false); //need event listener
 	
 	//ARRAY FOR FIGHTERS
 	var fighters = [
@@ -32,7 +32,7 @@ Assignment: Duel pt 3
 		damage:20, //damage is 20
 		health:100 //health starts at 100
 	}];
-	var round=0; 
+var round = 1;
 	
 	//INITIALIZE DOM
 	round_txt.innerHTML = "Click FIGHT button to start";
@@ -54,17 +54,17 @@ Assignment: Duel pt 3
 			console.log(fighters[0].health, fighters[1].health);
 			
 			//winner?
-			var result=winnerCheck ();
-			console.log (result); //will display if winner
+			var result = winnerCheck();
+			console.log(result); //will display if winner
 			
 			round_txt.innerHTML = "ROUND #" + round+ "Results:";
-			rount++;
+			round++;
 			if (result === "no winner")
 			{
 				fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
 				fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
 				
-			} else{
+			}else{
 				fighter1_txt.innerHTML = result;
 				fighter2_txt.innerHTML = "";
 				
