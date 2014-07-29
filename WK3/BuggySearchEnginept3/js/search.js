@@ -63,7 +63,7 @@
 		results.sort(); //sorts results
 		
 		// Check that matches were found, and run output functions
-		if(results.length = 0){ //if items were found
+		if(results.length === 0){ //if items were found
 			noMatch(); //if no match was found
 		}else{
 			showMatches(results); //shows result
