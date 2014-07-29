@@ -93,7 +93,7 @@
 			// title of video ends with pipe
 			// pull the title's string using index numbers
 			titleEnd = results[i].indexOf('|');
-			title = results[i].subString(0, titleEnd); //returns integer between 0 and title
+			title = results[i].substring(0, titleEnd); //returns integer between 0 and title
 			
 			// pull the video url after the title
 			url = results[i].substring(results[i].indexOf('|')+1, results[i].length); //results will show if search is longer than 2 letters
